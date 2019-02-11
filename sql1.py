@@ -1,7 +1,6 @@
 # sql1.py
-"""Volume 3: SQL 1 (Introduction).
+"""
 Adam Robertson
-Math 321
 November 8, 2018
 """
 
@@ -10,7 +9,6 @@ import sqlite3 as sql
 import numpy as np
 from matplotlib import pyplot as plt
 
-# Problems 1, 2, and 4
 def student_db(db_file="students.db", student_info="student_info.csv",
                                       student_grades="student_grades.csv"):
     """Connect to the database db_file (or create it if it doesn’t exist).
@@ -46,7 +44,6 @@ def student_db(db_file="students.db", student_info="student_info.csv",
         student_grades (str): The name of a csv file containing data for the
             StudentGrades table.
     """
-    # Problem 1
     try:
         with sql.connect(db_file) as conn:
             cur = conn.cursor()
@@ -65,7 +62,6 @@ def student_db(db_file="students.db", student_info="student_info.csv",
     finally:
         conn.close() 
 
-    # Problem 2
     try:
         with sql.connect(db_file) as conn:
             cur = conn.cursor()
@@ -100,7 +96,6 @@ def student_db(db_file="students.db", student_info="student_info.csv",
         for row in cur.execute("SELECT * FROM StudentInfo;"):
             print(row)
 
-# Problems 3 and 4
 def earthquakes_db(db_file="earthquakes.db", data_file="us_earthquakes.csv"):
     """Connect to the database db_file (or create it if it doesn’t exist).
     Drop the USEarthquakes table if it already exists, then create a new
@@ -117,7 +112,6 @@ def earthquakes_db(db_file="earthquakes.db", data_file="us_earthquakes.csv"):
         data_file (str): The name of a csv file containing data for the
             USEarthquakes table.
     """
-    # Problem 3
     try:
         with sql.connect(db_file) as conn:
             cur = conn.cursor()
@@ -134,7 +128,6 @@ def earthquakes_db(db_file="earthquakes.db", data_file="us_earthquakes.csv"):
             # Insert tuples into table using executemany
             cur.executemany("INSERT INTO USEarthquakes VALUES(?,?,?,?,?,?,?,?,?);", earthquake_tuples)
 
-            # Problem 4
             # Remove rows from USEarthquakes that have a value of 0 for the Magnitude
             cur.execute("DELETE FROM USEarthquakes WHERE Magnitude==0;")
 
@@ -147,7 +140,6 @@ def earthquakes_db(db_file="earthquakes.db", data_file="us_earthquakes.csv"):
         conn.close()
 
 
-# Problem 5
 def prob5(db_file="students.db"):
     """Query the database for all tuples of the form (StudentName, CourseName)
     where that student has an 'A' or 'A+'' grade in that course. Return the
@@ -175,7 +167,6 @@ def prob5(db_file="students.db"):
         return tuples
 
 
-# Problem 6
 def prob6(db_file="earthquakes.db"):
     """Create a single figure with two subplots: a histogram of the magnitudes
     of the earthquakes from 1800-1900, and a histogram of the magnitudes of the

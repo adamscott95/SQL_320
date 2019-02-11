@@ -1,13 +1,11 @@
 # solutions.py
-"""Volume 3: SQL 2.
+"""
 Adam Robertson
-Math 321
 November 20, 2018
 """
 
 import sqlite3 as sql
 
-# Problem 1
 def prob1(db_file="students.db"):
     """Query the database for the list of the names of students who have a
     'B' grade in any course. Return the list.
@@ -35,7 +33,6 @@ def prob1(db_file="students.db"):
             result_set.append(n[0])
         return result_set
 
-# Problem 2
 def prob2(db_file="students.db"):
     """Query the database for all tuples of the form (Name, MajorName, Grade)
     where 'Name' is a student's name and 'Grade' is their grade in Calculus.
@@ -71,7 +68,6 @@ def prob2(db_file="students.db"):
         return tuples
 
 
-# Problem 3
 def prob3(db_file="students.db"):
     """Query the database for the list of the names of courses that have at
     least 5 students enrolled in them.
@@ -105,7 +101,6 @@ def prob3(db_file="students.db"):
 
 
 
-# Problem 4
 def prob4(db_file="students.db"):
     """Query the given database for tuples of the form (MajorName, N) where N
     is the number of students in the specified major. Sort the results in
@@ -137,7 +132,6 @@ def prob4(db_file="students.db"):
         return tuples
 
 
-# Problem 5
 def prob5(db_file="students.db"):
     """Query the database for tuples of the form (StudentName, MajorName) where
     the last name of the specified student begins with the letter C.
@@ -164,7 +158,6 @@ def prob5(db_file="students.db"):
         return tuples
 
 
-# Problem 6
 def prob6(db_file="students.db"):
     """Query the database for tuples of the form (StudentName, N, GPA) where N
     is the number of courses that the specified student is in and 'GPA' is the
