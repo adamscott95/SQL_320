@@ -6,7 +6,7 @@ November 20, 2018
 
 import sqlite3 as sql
 
-def prob1(db_file="students.db"):
+def students_with_b(db_file="students.db"):
     """Query the database for the list of the names of students who have a
     'B' grade in any course. Return the list.
 
@@ -33,7 +33,7 @@ def prob1(db_file="students.db"):
             result_set.append(n[0])
         return result_set
 
-def prob2(db_file="students.db"):
+def calculus_grades(db_file="students.db"):
     """Query the database for all tuples of the form (Name, MajorName, Grade)
     where 'Name' is a student's name and 'Grade' is their grade in Calculus.
     Only include results for students that are actually taking Calculus, but
@@ -68,7 +68,7 @@ def prob2(db_file="students.db"):
         return tuples
 
 
-def prob3(db_file="students.db"):
+def courses_with_five_students(db_file="students.db"):
     """Query the database for the list of the names of courses that have at
     least 5 students enrolled in them.
 
@@ -101,7 +101,7 @@ def prob3(db_file="students.db"):
 
 
 
-def prob4(db_file="students.db"):
+def major_counts(db_file="students.db"):
     """Query the given database for tuples of the form (MajorName, N) where N
     is the number of students in the specified major. Sort the results in
     descending order by the counts N, then in alphabetic order by MajorName.
@@ -132,7 +132,7 @@ def prob4(db_file="students.db"):
         return tuples
 
 
-def prob5(db_file="students.db"):
+def last_name_C(db_file="students.db"):
     """Query the database for tuples of the form (StudentName, MajorName) where
     the last name of the specified student begins with the letter C.
 
@@ -158,7 +158,7 @@ def prob5(db_file="students.db"):
         return tuples
 
 
-def prob6(db_file="students.db"):
+def gpa(db_file="students.db"):
     """Query the database for tuples of the form (StudentName, N, GPA) where N
     is the number of courses that the specified student is in and 'GPA' is the
     grade point average of the specified student according to the following

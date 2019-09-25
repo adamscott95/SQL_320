@@ -86,7 +86,6 @@ def student_db(db_file="students.db", student_info="student_info.csv",
             cur.executemany("INSERT INTO StudentInfo VALUES(?,?,?);", student_info_tuples)
             cur.executemany("INSERT INTO StudentGrades VALUES(?,?,?);", student_grades_tuples)
             
-            # Problem 4
             # Replace values of -1 in MajorID column of StudentInfo table with NULL
             cur.execute("UPDATE StudentInfo SET MajorID=NULL WHERE MajorID==-1;")
     finally:
@@ -140,7 +139,7 @@ def earthquakes_db(db_file="earthquakes.db", data_file="us_earthquakes.csv"):
         conn.close()
 
 
-def prob5(db_file="students.db"):
+def request_students_courses(db_file="students.db"):
     """Query the database for all tuples of the form (StudentName, CourseName)
     where that student has an 'A' or 'A+'' grade in that course. Return the
     list of tuples.
@@ -167,7 +166,7 @@ def prob5(db_file="students.db"):
         return tuples
 
 
-def prob6(db_file="earthquakes.db"):
+def plot_earthquakes(db_file="earthquakes.db"):
     """Create a single figure with two subplots: a histogram of the magnitudes
     of the earthquakes from 1800-1900, and a histogram of the magnitudes of the
     earthquakes from 1900-2000. Also calculate and return the average magnitude
